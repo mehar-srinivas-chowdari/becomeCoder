@@ -1,0 +1,15 @@
+def findmin(n,arr):
+    mi=arr[0]
+    for i in range(1,n):
+        if mi>arr[i]:
+            mi=arr[i]
+    li=[]
+    count=arr.count(mi)
+    for i in range(count):
+        li.append(arr.index(mi)+i)
+        arr.remove(mi)
+    return mi,count,*li
+    
+n=int(input())
+arr=list(map(int,input().split()))
+print(*findmin(n,arr))
