@@ -1,0 +1,8 @@
+def evenodd(l,arr,even,odd):
+    for i in arr:
+        if i%2==0:
+            even+=1
+        else:
+            odd+=1
+    return(even,odd)
+print(*evenodd(int(input()),list(map(int,input().split())),0,0))
