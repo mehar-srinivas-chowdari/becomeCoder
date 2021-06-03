@@ -1,0 +1,13 @@
+def sumofdigits(n,arr):
+    for i in range(n):
+        add=0
+        while arr[i]:
+            r=arr[i]%10
+            arr[i]//=10
+            add+=r
+        arr[i]=add
+
+n= int(input())
+arr=list(map(int,input().split()))
+sumofdigits(n,arr)
+print(*arr)
