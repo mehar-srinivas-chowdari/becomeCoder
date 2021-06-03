@@ -1,0 +1,19 @@
+def findprimes(n,arr):
+    primes,nonprimes=[],[]
+    for i in arr:
+        temp=0
+        if i==1:
+            temp=1
+            nonprimes.append(i)
+        for j in range(2,int(i**(1/2))+1):
+            if i%j==0:
+                nonprimes.append(i)
+                temp=1
+                break
+        if temp==0:
+            primes.append(i)
+    return primes,nonprimes
+
+n= int(input())
+arr=list(map(int,input().split()))
+print(*findprimes(n,arr))
