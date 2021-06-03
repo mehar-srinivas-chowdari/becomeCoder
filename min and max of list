@@ -1,0 +1,12 @@
+def minmax(n,arr):
+    mi,ma=arr[0],arr[0]
+    for i in range(1,n):
+        if ma<arr[i]:
+            ma=arr[i]
+        if mi>arr[i]:
+            mi=arr[i]
+    return mi,ma
+
+num=int(input())
+arr=list(map(int,input().split()))
+print(*minmax(num,arr))
