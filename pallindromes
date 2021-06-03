@@ -1,0 +1,15 @@
+def paliCount(n,arr):
+    pali=0
+    for i in range(n):
+        temp,num=0,arr[i]
+        while arr[i]:
+            r=arr[i]%10
+            arr[i]//=10
+            temp=temp*10+r
+        if temp==num:
+            pali+=1
+    return pali
+
+n= int(input())
+arr=list(map(int,input().split()))
+print(paliCount(n,arr))
