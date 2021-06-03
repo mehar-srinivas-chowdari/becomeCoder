@@ -1,0 +1,28 @@
+def supermin_max(n,arr):
+    mi,ma=min(arr),max(arr)
+    mini,maxi=mi,ma
+    rmi,rma=0,0
+    while mi:
+        s=mi%10
+        mi=mi//10
+        rmi=rmi*10+s
+    while ma:
+        b=ma%10
+        ma=ma//10
+        rma=rma*10+b
+    print(mini,maxi,rmi,rma)
+    arr[arr.index(mini)]=rmi
+    if(min(arr)==rmi):
+        mini='super minimum &'
+    else:
+        mini='Not super minimum &'
+    arr[arr.index(rmi)]=0
+    arr[arr.index(maxi)]=rma
+    if(max(arr)==rma):
+        maxi='super maximum'
+    else:
+        maxi='Not super maximum'
+    return mini,maxi
+n=int(input())
+arr=list(map(int,input().split()))
+print(*supermin_max(n,arr))
