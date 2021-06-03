@@ -1,0 +1,14 @@
+def reverse(n,arr):
+    for i in range(n):
+        rev=0
+        while arr[i]:
+            r=arr[i]%10
+            arr[i]//=10
+            rev=rev*10+r
+        arr[i]=rev
+
+
+n= int(input())
+arr=list(map(int,input().split()))
+reverse(n,arr)
+print(*arr)
