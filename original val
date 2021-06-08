@@ -1,0 +1,9 @@
+def original(n,arr):
+    for i in arr:
+        if i not in li:
+            li.append(i)
+n=int(input())
+arr=list(map(int,input().split()))
+li=[]
+original(n,arr)
+print(*li)
