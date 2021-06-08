@@ -1,0 +1,21 @@
+def bouncyarray(n,arr):
+    if arr[0]<arr[1]:
+        temp='H'
+    elif arr[0]>arr[1]:
+        temp='L'
+    else:
+        return False
+    for i in range(2,n):
+        if temp=='H':
+            if arr[i-1]<=arr[i]:
+                return False
+            temp='L'
+        elif temp=='L':
+            if arr[i-1]>=arr[i]:
+                return False
+            temp='H'
+    return True
+
+n=int(input())
+arr=list(map(int,input().split()))
+print(bouncyarray(n,arr))
