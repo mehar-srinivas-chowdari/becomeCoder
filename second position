@@ -1,0 +1,15 @@
+def secondindex(n,arr,num):
+    if num in arr:
+        if arr.count(num)>=2:
+            arr.remove(num)
+            return arr.index(num)+1
+        else:
+            return 'only one time'
+    else:
+        return False
+
+
+n=int(input())
+arr=list(map(int,input().split()))
+num=int(input())
+print(secondindex(n,arr,num))
