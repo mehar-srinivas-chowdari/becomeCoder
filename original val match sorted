@@ -1,0 +1,15 @@
+def originalvalmatch(n,arr):
+    temp=0
+    for i in arr:
+        if i not in li:
+            li.append(i)
+    li.sort()
+    for i in range(len(li)):
+        if arr[i]==li[i]:
+            temp+=1
+    return temp
+
+n=int(input())
+arr=list(map(int,input().split()))
+li=[]
+print(originalvalmatch(n,arr))
