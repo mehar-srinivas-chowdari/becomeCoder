@@ -1,0 +1,14 @@
+def max_ones(n,arr):
+    temp,count=0,0
+    for i in arr:
+        if i==1:
+            temp+=1
+        else:
+            if count<temp:
+                count=temp
+            temp=0
+    return max(temp,count)
+    
+n=int(input())
+arr=list(map(int,input().split()))
+print(max_ones(n,arr))
